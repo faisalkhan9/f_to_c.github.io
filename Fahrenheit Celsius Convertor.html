@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="gold" />
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+
+
+    .box {
+    
+
+      background-color: #ffdd59;
+      height: 600px;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      font-size: 22px;
+      border: none;
+     
+      transition: .15s linear;
+    }
+
+    input {
+      height: 50px;
+      width: 140px;
+      margin: 6px;
+      font-weight: 500;
+      font-size: 22px;
+      padding-left: 10px;
+      border: none;
+      border-radius: 2px;
+    }
+
+    select {
+      height: 50px;
+      width: 140px;
+      margin: 6px;
+      font-weight: 500;
+      font-size: 22px;
+      padding-left: 10px;
+
+      background-color: white;
+
+
+
+      /* Style */
+
+
+      border: none;
+      border-radius: 2px;
+
+      /* Arrow */
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem top 50%;
+      background-size: 0.65rem auto;
+
+
+    }
+
+    select:focus {
+      outline: none;
+    }
+
+    input:focus {
+      /*     background-color: aqua; */
+      outline: none;
+
+
+    }
+
+    .input1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+    }
+
+    button {
+      height: 40px;
+      width: 160px;
+      background-color: #1e272e;
+      color: white;
+      font-size: 26px;
+      border-radius: 100px;
+      box-shadow: 0px 2px 6px #00000040;
+      font-weight: 600;
+      transition: .2s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button:active {
+      background: transparent;
+    }
+
+
+    .text {
+      border: 5px solid #1e272e;
+      height: 100px;
+      width: 300px;
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+      position: relative;
+      margin-top: 20px;
+
+    }
+
+    .line {
+      display: flex;
+      align-items: center;
+      border: ;
+      background-color: #262626;
+      color: white;
+      height: 36px;
+      width: 250px;
+      justify-content: center;
+      position: absolute;
+      top: -20px;
+
+
+    }
+
+    .line2 {
+      display: flex;
+      align-items: center;
+      border: ;
+      background-color: #1e272e;
+      color: white;
+      height: 36px;
+      width: 160px;
+      justify-content: center;
+      position: absolute;
+      top: 75px;
+    }
+
+    .line2 h4 {
+      padding-left: 10px;
+    }
+
+    .ex {
+      height: 20px;
+      padding-top: 4px;
+
+    }
+
+    .last {
+      height: 60px;
+      width: 202px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: none;
+      border-radius: 2px;
+
+
+    }
+
+    #result,
+    #indicator {
+      font-size: 22px;
+      font-weight: 500;
+      color: black;
+      text-align: center;
+            display: grid;
+            place-items: center;
+    }
+#result {
+  flex-basis: 50%;
+}
+    #indicator {
+      background-color: whitesmoke;
+      width: 100%;
+      font-size: 18px;
+      flex-basis: 50%;
+      border: none;
+      border-radius: 0px 0px 2px 2px;
+      
+    }
+    
+    form {
+      height:200px;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="box">
+
+    <div class="text">
+      <div class="line">
+
+
+        <h4>Fahrenheit <svg class="ex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+            <path fill="white" d="M0 168v-16c0-13.255 10.745-24 24-24h360V80c0-21.367 25.899-32.042 40.971-16.971l80 80c9.372 9.373 9.372 24.569 0 33.941l-80 80C409.956 271.982 384 261.456 384 240v-48H24c-13.255 0-24-10.745-24-24zm488 152H128v-48c0-21.314-25.862-32.08-40.971-16.971l-80 80c-9.372 9.373-9.372 24.569 0 33.941l80 80C102.057 463.997 128 453.437 128 432v-48h360c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24z" />
+          </svg>
+          Celsius</h4>
+      </div>
+      <div class="line2">
+        <svg class="ex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+          <path fill="white" d="M256 336h-.02c0-16.18 1.34-8.73-85.05-181.51-17.65-35.29-68.19-35.36-85.87 0C-2.06 328.75.02 320.33.02 336H0c0 44.18 57.31 80 128 80s128-35.82 128-80zM128 176l72 144H56l72-144zm511.98 160c0-16.18 1.34-8.73-85.05-181.51-17.65-35.29-68.19-35.36-85.87 0-87.12 174.26-85.04 165.84-85.04 181.51H384c0 44.18 57.31 80 128 80s128-35.82 128-80h-.02zM440 320l72-144 72 144H440zm88 128H352V153.25c23.51-10.29 41.16-31.48 46.39-57.25H528c8.84 0 16-7.16 16-16V48c0-8.84-7.16-16-16-16H383.64C369.04 12.68 346.09 0 320 0s-49.04 12.68-63.64 32H112c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h129.61c5.23 25.76 22.87 46.96 46.39 57.25V448H112c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h416c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z" />
+        </svg>
+        <h4>Converter</h4>
+      </div>
+
+    </div>
+
+<form action="" method="" onsubmit="event.preventDefault();" accept-charset="utf-8">
+  
+
+    <div class="input1">
+
+      <input type="number" placeholder="0" name="input-box" id="input-box" required>
+      <select name="degree" id="degree">
+        <option value="celsius" id="celsius">Celsius</option>
+        <option value="Fahrenheit" id="fahrenheit">Fahrenheit</option>
+      </select>
+    </div>
+    <div class="last">
+
+      <p id="result"></p>
+      <p id="indicator"></p>
+    </div>
+
+    <button type="submit" id="new" onclick="myFun()">Calculate</button>
+
+</form>
+
+
+  </div>
+
+  <script>
+    
+    
+
+  
+
+    function myFun() {
+
+      var select = document.getElementById('degree');
+      var value = select.options[select.selectedIndex].value;
+
+      selectElement = document.querySelector('#degree');
+      output = selectElement.options[selectElement.selectedIndex].value;
+
+      if (output == "celsius") {
+        let a = document.getElementById("input-box").value;
+     
+     if (a == "")   {
+       
+     }
+        else {
+        let celtofah = (a * 9 / 5) + 32;
+        document.getElementById("result").innerHTML = celtofah.toFixed(2) + " " + "Fahrenheit";
+     
+     
+     
+     
+     
+     
+        if (a >= 100) {
+          document.querySelector(".box").style.background = "#ff3f34";
+          document.getElementById("indicator").innerHTML = "Extremely Hot";
+        }
+
+        else if (a >= 50) {
+          document.querySelector(".box").style.background = "#ff3f34";
+          document.getElementById("indicator").innerHTML = "Too Hot";
+        }
+
+        else if (a >= 40) {
+          document.querySelector(".box").style.background = "#ffa801";
+          document.getElementById("indicator").innerHTML = "Hot";
+        }
+
+        else if (a >= 30) {
+          document.querySelector(".box").style.background = "#ffd32a";
+          document.getElementById("indicator").innerHTML = "Normal";
+        }
+
+        else if (a >= 20) {
+          document.querySelector(".box").style.background = "#0be881";
+          document.getElementById("indicator").innerHTML = "Little Cold";
+        }
+        else if (a >= 10) {
+          document.querySelector(".box").style.background = "#00d8d6";
+          document.getElementById("indicator").innerHTML = "Cold";
+        }
+        else if (a >= 0) {
+          document.querySelector(".box").style.background = "#0fbcf9";
+          document.getElementById("indicator").innerHTML = "Too Cold";
+        }
+        else {
+          document.querySelector(".box").style.background = "#575fcf";
+          document.getElementById("indicator").innerHTML = "Extremely Cold";
+        }
+
+}
+      }
+
+      else {
+
+        let a = document.getElementById("input-box").value;
+        
+        if (a == "") {
+          
+        }
+        else {
+        let fahtocel = (a - 32) * 5 / 9;
+        document.getElementById("result").innerHTML = fahtocel.toFixed(2) + " " + "Celsius";
+
+        if (a >= 212) {
+          document.querySelector(".box").style.background = "#ff3f34";
+          document.getElementById("indicator").innerHTML = "Extremely Hot";
+        }
+
+        else if (a >= 122) {
+          document.querySelector(".box").style.background = "#ff3f34";
+          document.getElementById("indicator").innerHTML = "Too Hot";
+        }
+        else if (a >= 104) {
+          document.querySelector(".box").style.background = "#ffa801";
+          document.getElementById("indicator").innerHTML = "Hot";
+        }
+
+        else if (a >= 86) {
+          document.querySelector(".box").style.background = "#ffd32a";
+          document.getElementById("indicator").innerHTML = "Normal";
+        }
+
+        else if (a >= 68) {
+          document.querySelector(".box").style.background = "#0be881";
+          document.getElementById("indicator").innerHTML = "Little Cold";
+        }
+        else if (a >= 50) {
+          document.querySelector(".box").style.background = "#00d8d6";
+          document.getElementById("indicator").innerHTML = "Cold";
+        }
+        else if (a >= 32) {
+          document.querySelector(".box").style.background = "#0fbcf9";
+          document.getElementById("indicator").innerHTML = "Too Cold";
+        }
+        else {
+          document.querySelector(".box").style.background = "#575fcf";
+          document.getElementById("indicator").innerHTML = "Extremely Cold";
+        }
+
+      }
+}
+    }
+  </script>
+
+
+</body>
+
+</html>
