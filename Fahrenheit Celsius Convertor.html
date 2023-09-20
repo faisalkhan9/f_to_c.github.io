@@ -267,7 +267,31 @@ z-index: 1;
        width:1000px;
         }
     }
-    
+        .credits {
+      font-family: verdana;
+      height:40px;
+      background: white;
+      z-index: 99999;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      position: fixed;
+      bottom:10px;
+      left:10px;
+      padding: 0 20px;
+      gap:10px;
+    }
+    .credits h4 {
+      font-weight: 600;
+      font-size: 12px;
+    }
+     .credits a {
+      font-weight: 500;
+      font-size: 12px;
+      color:royalblue;
+      text-decoration:;
+    }
     
     
   </style>
@@ -314,7 +338,10 @@ z-index: 1;
 </div>
   </div>
 
-
+<div class="credits">
+  <h4>made by faisal khan</h4>
+  <a href="https://linktr.ee/faisalkhan57" target="_blank">linktree</a>
+</div>
   <script>
     document.getElementById("input-box")
       .addEventListener("keyup", function(event) {
