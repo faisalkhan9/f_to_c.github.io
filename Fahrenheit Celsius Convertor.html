@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#262626" />
+  <meta name="theme-color" content="#4169E1" />
   <title>Temperature Convertor</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
 
@@ -25,7 +25,7 @@
     }
 
     body {
-      background-color: #000;
+      background-color: /*#000*/ #f2f2f2;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -38,7 +38,7 @@
     .container {
       background-color: #ffdd59;
 
-      height: 70vh;
+      height:;
       width: 90%;
       min-width: 300px;
       height:500px;
@@ -54,7 +54,9 @@
       overflow: hidden;
    position: relative;
     }
-
+.box {
+ 
+}
 
         
    .container::before {
@@ -78,7 +80,7 @@
    .container::after {
     
      content: '';
-     background:#1a1a1a;
+     background: /*#1a1a1a*/ #f2f2f2;
      position: absolute;
     
      inset: 8px;
@@ -95,7 +97,7 @@
       padding: 0 10px;
       border: none;
       border-radius: 2px;
-      background: whitesmoke;
+      background: /*whitesmoke*/ #fff;
     }
 
     select {
@@ -106,7 +108,7 @@
       font-size: 2rem;
       padding-left: 10px;
 
-      background-color: whitesmoke;
+      background-color: /*whitesmoke*/ #fff;
 
 
 
@@ -175,7 +177,7 @@ z-index: 1;
       align-items: center;
       border: ;
       background-color: transparent;
-      color: white;
+      color: #1a1a1a;
       height: 36px;
       border-radius: 4px;
       width: 210px;
@@ -186,10 +188,10 @@ z-index: 1;
       left:50%;
       transform:translateX(-50%);
 z-index: 1;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       
     }
-
+   
     #ex1 {
 
       height: 18px;
@@ -211,8 +213,9 @@ z-index: 1;
       border-radius: 2px;
       overflow: hidden;
       margin-bottom: 20px;
-      z-index: 1;
+      z-index:1;
     }
+    
 
     #result,
     #indicator {
@@ -310,7 +313,7 @@ z-index: 1;
       <div class="line">
 
         <h4>Fahrenheit <svg id="ex1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="white" d="M0 168v-16c0-13.255 10.745-24 24-24h360V80c0-21.367 25.899-32.042 40.971-16.971l80 80c9.372 9.373 9.372 24.569 0 33.941l-80 80C409.956 271.982 384 261.456 384 240v-48H24c-13.255 0-24-10.745-24-24zm488 152H128v-48c0-21.314-25.862-32.08-40.971-16.971l-80 80c-9.372 9.373-9.372 24.569 0 33.941l80 80C102.057 463.997 128 453.437 128 432v-48h360c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24z" />
+            <path fill="#1a1a1a" d="M0 168v-16c0-13.255 10.745-24 24-24h360V80c0-21.367 25.899-32.042 40.971-16.971l80 80c9.372 9.373 9.372 24.569 0 33.941l-80 80C409.956 271.982 384 261.456 384 240v-48H24c-13.255 0-24-10.745-24-24zm488 152H128v-48c0-21.314-25.862-32.08-40.971-16.971l-80 80c-9.372 9.373-9.372 24.569 0 33.941l80 80C102.057 463.997 128 453.437 128 432v-48h360c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24z" />
           </svg>
           Celsius</h4>
      
